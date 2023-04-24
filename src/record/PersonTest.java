@@ -13,7 +13,7 @@ public class PersonTest {
         int min = persons[0].age();
 
         //最年長と最年少の出力
-        for (int i = 0; i < persons.length; i++) {
+        for (int i = 1; i < persons.length; i++) {
             if (persons[i].age() > max) {
                 max = persons[i].age();
             }
