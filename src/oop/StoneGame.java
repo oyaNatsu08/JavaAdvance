@@ -84,16 +84,14 @@ public class StoneGame implements App {
         }
         int loser = playerIndex;
         int winner = playerIndex-1;
+        if (winner == -1) {
+            winner = players.length - 1;
+        }
 
-        System.out.println(playerIndex);
         //勝者プレイヤーのカウントアップ
         players[winner].countUpWins();
 
-
-
         System.out.println("勝者：" + players[winner].name);
-        System.out.println(playerIndex);
-
         System.out.println("敗者：" + players[loser].name);
 
     }
