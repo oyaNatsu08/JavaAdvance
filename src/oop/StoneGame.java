@@ -1,8 +1,10 @@
 package oop;
 
+import oop2.App;
+
 import java.util.Scanner;
 
-public class StoneGame {
+public class StoneGame implements App {
     Player[] players;
     int totalNumberOfStones;
     int numberOfStonesLeft;

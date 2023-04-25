@@ -1,11 +1,13 @@
 package oop;
 
-public class SmartPhone {
+import oop2.App;
+
+public class SmartPhone implements App {
     String model;
     String os;
     Account account;
     AddressBook[] addressBooks;
-    String[] apps;
+    App[] apps;
 
     //コンストラクタ
     public SmartPhone(String model, String os) {
@@ -28,7 +30,7 @@ public class SmartPhone {
 
     public boolean addAddressBook(AddressBook addressBook) {
         addressBooks = new AddressBook[3];
-        boolean judge;
+        boolean judge = false;
         int i;
         //配列の要素に空きがあるか調べる
         for (i = 0; i < addressBooks.length; i++) {
@@ -51,20 +53,41 @@ public class SmartPhone {
     }
 
     public void displayAppList() {
-        for (String app : apps) {
+        for (App app : apps) {
             System.out.println(app);
         }
     }
 
     //追加メソッド
     //インストールしたアプリを追加
-    public void addApp(String app) {
-        apps = new String[1];
-        apps[0] = app;
-    }
+//    public void addApp(String app) {
+//        apps = new String[1];
+//        apps[0] = app;
+//    }
 
-    @Override
-    public String toString() {
-        return "name:" + account.name + "tel:" + account.tel;
-    }
+    //アプリをインストールするメソッド
+   public boolean install(App app) {
+        apps = new App[1];
+        boolean judge = false;
+        int i;
+        //配列の要素に空きがあるか調べる
+        for (i = 0; i < apps.length; i++) {
+           if (apps[i] == null) {
+               judge = true;
+               break;
+           } else {
+               judge = false;
+           }
+        }
+
+       if (judge) {
+           apps[0] = app;
+           return true;
+       } else {
+           return false;
+       }
+   }
+
+   public void start() {}
+
 }

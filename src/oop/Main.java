@@ -23,9 +23,9 @@ public class Main {
         smartPhone.addAddressBook(addressBook2);
 
         //インストールしたアプリを追加
-        smartPhone.addApp("App1");
+        //smartPhone.addApp("App1");
         //インストールしたアプリを表示
-        smartPhone.displayAppList();
+        //smartPhone.displayAppList();
 
         System.out.println();
 
@@ -43,6 +43,11 @@ public class Main {
         //石取りゲームメイン処理オブジェクト
         StoneGame stoneGame = new StoneGame(players, 0, mark);
         stoneGame.start();
+
+        //石取りゲームインストール
+        smartPhone.install(stoneGame);
+        //インストールしたアプリを表示
+        smartPhone.displayAppList();
 
     }
 }
