@@ -18,12 +18,14 @@ public class ShapeTest {
         };
         double[] results = getTotalArea(shapes);
 
+        String[] text = {"三角形", "台形", "円"};
+
         double sum = 0.0;
 
-        for (double result : results) {
-            System.out.print("面積：");
-            System.out.println(result);
-            sum += result;
+        for (int i = 0; i < results.length; i++) {
+            System.out.print(text[i] + "の面積：");
+            System.out.println(results[i]);
+            sum += results[i];
         }
         System.out.println("3つの図形の合計：" + sum);
     }
