@@ -27,5 +27,22 @@ public class Main {
         //インストールしたアプリを表示
         smartPhone.displayAppList();
 
+        System.out.println();
+
+
+
+        //石取りゲームのメインメソッド処理
+        //参加プレイヤーオブジェクト
+        Player[] players = {
+                new Player("Noa"),
+                new Player("Neko"),
+                new Player("Inu")
+        };
+        //石取りゲームマークオブジェクト
+        Stone mark = new Stone("☆", 50, 5);
+        //石取りゲームメイン処理オブジェクト
+        StoneGame stoneGame = new StoneGame(players, 0, mark);
+        stoneGame.start();
+
     }
 }

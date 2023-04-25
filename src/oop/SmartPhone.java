@@ -62,4 +62,9 @@ public class SmartPhone {
         apps = new String[1];
         apps[0] = app;
     }
+
+    @Override
+    public String toString() {
+        return "name:" + account.name + "tel:" + account.tel;
+    }
 }
