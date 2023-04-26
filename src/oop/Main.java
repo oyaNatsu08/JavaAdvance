@@ -2,7 +2,7 @@ package oop;
 
 public class Main {
     public static void main(String[] args) {
-        SmartPhone smartPhone = new SmartPhone("iPhoneSE", "iOS");
+        SmartPhone smartPhone = new SmartPhone(SmartPhone.Model.iPhone, SmartPhone.Os.iOS);
         Account account = new Account("N", "000-0000-0000", "xxx@icloud.com", "○○○○○○");
         AddressBook addressBook = new AddressBook("A", "000-0000-0000", "yyy@icloud.com");
         AddressBook addressBook2 = new AddressBook("B", "000-0000-0000", "zzz@icloud.com");
