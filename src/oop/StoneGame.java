@@ -2,6 +2,7 @@ package oop;
 
 import oop2.App;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class StoneGame implements App {
@@ -41,19 +42,25 @@ public class StoneGame implements App {
     }
 
     public boolean next() {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        if (checkInput(num)) {
+
+        try {
+            Scanner sc = new Scanner(System.in);
+            int num = sc.nextInt();
+            if (checkInput(num)) {
+                return next();
+            } else {
+                numberOfStonesLeft -= num;
+                return judgeEnd();
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("数値を入力してください");
             return next();
-        } else {
-            numberOfStonesLeft -= num;
-            return judgeEnd();
         }
     }
 
     private boolean checkInput(int num) {
         if (num < 1 || num > mark.takeStone) {
-            System.out.println("入力値が違います。");
+            System.out.println("入力値が間違っています(1~" + mark.takeStone + "まで入力可能です)");
             return true;
         } else {
             return false;
